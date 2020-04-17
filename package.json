@@ -1,21 +1,19 @@
 {
-  "name": "t",
+  "name": "ts-alias",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build --watch",
+    "start": "npm run dist",
     "build": "tsc -p tsconfig.json && cp package.json ./dist",
-    "dist": "npm run build; cd dist; npm install --production; node index.js; cd ..",
+    "dist": "npm run build; cd dist; tspath -f; node index.js; cd ..",
     "lint": "eslint --format './node_modules/eslint-formatter-friendly/index.js' \"src/**/*.ts\"",
     "lint:fix": "npm run lint -- --fix"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "module-alias": "^2.2.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@ofa2/eslint-config": "^3.4.0",
     "@types/node": "^13.11.1",
@@ -29,9 +27,8 @@
     "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^2.0.4",
     "ts-node": "^8.8.2",
+    "tsconfig-paths": "^3.9.0",
+    "tspath": "^1.3.7",
     "typescript": "^3.8.3"
-  },
-  "_moduleAliases": {
-    "@deep": "./src/f1/f2/f3/f4"
   }
 }
