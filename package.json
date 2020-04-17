@@ -1,0 +1,37 @@
+{
+  "name": "t",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build --watch",
+    "build": "tsc -p tsconfig.json && cp package.json ./dist",
+    "dist": "npm run build; cd dist; npm install --production; node index.js; cd ..",
+    "lint": "eslint --format './node_modules/eslint-formatter-friendly/index.js' \"src/**/*.ts\"",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "module-alias": "^2.2.2"
+  },
+  "devDependencies": {
+    "@ofa2/eslint-config": "^3.4.0",
+    "@types/node": "^13.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.28.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-formatter-friendly": "^7.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^2.0.4",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3"
+  },
+  "_moduleAliases": {
+    "@deep": "./src/f1/f2/f3/f4"
+  }
+}
